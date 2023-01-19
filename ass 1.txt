@@ -1,0 +1,55 @@
+create table dept(
+deptno int primary key,
+dname varchar(20),
+loc varchar(20)
+)
+
+insert into dept
+(10,'Accounting','New York')
+(10,'Research','Dallas')
+(10,'Sales','Chicago')
+(10,'Operations','Boston')
+
+create table emp(
+empno int primary key,
+ename varchar(20),
+job varchar(20),
+mgr_id int,
+hiredate date,
+sal int,
+comm int,
+deptno references dept deptno)
+
+Queries:
+
+1) select * from EMP like 'A%'
+
+2) select * from EMP where MGR-Id is null
+
+3) select ENAME, EMPNO, SAL from EMP where SAL>=1200 and SAL<=1400
+
+4) select d.dname, e.ename, e.sal from EMP e inner join DEPT d on e.deptno=d.deptno where d.deptno=20
+
+   update emp set sal=sal+(sal*10/100) where deptno=20
+
+   select d.dname, e.ename, e.sal from EMP e inner join DEPT d on e.deptno=d.deptno where d.deptno=20
+
+5) select COUNT(job) as 'TOTAL CLERK' from EMP where job='Clerk'
+
+6) select job, AVG(sal) as 'AVG SALARY', COUNT(empno) as 'COUNT OF EMPLOYEE' from EMP group by job
+
+7) select MIN(sal) as 'MIN SAL', MAX(sal) as 'MAX SAL' from emp
+
+8) select d.deptno, d.dname, d.loc, e.ename from DEPT d LEFT OUTER JOIN EMP e on d.deptno=e.deptno where e.deptno IS NULL
+
+9) select ename,sal,job from EMP where job='Analyst' AND deptno=20 group by ename, sal, job having sal>=1200 order by ename ASC
+
+10) select d.dname, d.deptno, SUM(e.sal) as 'TOTAL SALARY' from EMP e inner join DEPT d on e.deptno=d.deptno group by d.deptno,d.dname
+
+11) select ename, sal from EMP where ename in('Smith', 'Miller')
+
+12) select * from EMP where ENAME like '[AM]%'
+
+13) select ename, 12*sal as 'Annual Salary' from EMP where ename='Smith'
+
+14) select ENAME, SAL from EMP where SAL<1500 or SAL>2850
