@@ -1,0 +1,244 @@
+//Assignment-2
+
+1)Write a program in C# to accept a word from the user and display the length of it.
+using System;
+
+
+namespace Assignment2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a Sentence : ");
+            string str = Console.ReadLine();
+            Console.WriteLine(str.Length);
+            Console.ReadLine();
+        }
+    }
+}
+
+2.)Write a program in C# to accept a word from the user and display the reverse of it. 
+using System;
+
+
+namespace Assignment2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a Sentence : ");
+            string str = Console.ReadLine();
+            char[] array=str.ToCharArray();
+            Array.Reverse(array);
+            Console.WriteLine("The Reverse : " + array);
+            Console.ReadLine();
+        }
+    }
+}
+
+3.)Write a program in C# to accept two words from user and find out if they are same. 
+using System;
+
+
+namespace Assignment2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a Sentence : ");
+            string str = Console.ReadLine();
+            char[] array=str.ToCharArray();
+            Console.WriteLine("Enter a Sentence : ");
+            string str1 = Console.ReadLine();
+            if(str1.Equals(str))
+                Console.WriteLine("Equal");
+            else
+                Console.WriteLine("Not Equal");
+            Console.ReadLine();
+        }
+    }
+}
+
+
+Classes and Constructors:
+1. Create a class called Accounts which has data members(fields) like Account no, Customer name, Account type, Transaction type (d/w), amount, balance
+D->Deposit
+W->Withdrawal
+
+-write a function that updates the balance depending upon the transaction type
+
+	-If transaction type is deposit call the credit(int amount) function and update balance
+	-If transaction type is withdraw call debit(int amt)function and update balance
+-Pass the other information like Acount no,name,acc type through constructor
+-call the show data method to display the values.
+
+using System;
+
+
+namespace Assignment2
+{
+    public class accounts 
+    {
+        int acc_no;
+        string cust_name;
+        string accc_type;
+        float balance;
+
+        public accounts(int acc_no, string cust_name, string accc_type, float balance)
+        {
+            this.acc_no = acc_no;
+            this.cust_name = cust_name;
+            this.accc_type = accc_type;
+            this.balance = balance;
+        }
+        public void deposit(int amount)
+        {
+            balance += amount;
+            Console.WriteLine("Successfully Deposited" );
+        }
+        public void withdraw(int amt)
+        {
+            balance -= amt;
+            Console.WriteLine("Successfully withdrawn");
+        }
+        public void showDetails()
+        {
+            Console.WriteLine("Account Number: " + acc_no);
+            Console.WriteLine("Customer Name: " + cust_name);
+            Console.WriteLine("Account Type: " + accc_type);
+            Console.WriteLine("Total Balance: " + balance);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int choice = 0;
+            Console.Write("Enter Account Number : ");
+            int acc_number = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Customer Name : ");
+            string c_name = Console.ReadLine();
+            Console.Write("Enter Account Type saving/current : ");
+            string acc_type = Console.ReadLine();
+            Console.Write("Enter Balance : ");
+            float Balance = float.Parse(Console.ReadLine());
+            accounts accounts = new accounts(acc_number,c_name,acc_type, Balance);
+            do
+            {
+                Console.WriteLine("Select Any one transaction");
+                Console.WriteLine("1. Show details :");
+                Console.WriteLine("2. Deposit :");
+                Console.WriteLine("3. Withdraw :");
+                Console.WriteLine("4. Exit :");
+                choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        accounts.showDetails();
+                        break;
+                    case 2:
+                        int amount;
+                        Console.Write("Enter Amount to deposite : ");
+                        accounts.deposit(amount);
+                        break;
+                    case 3:
+                        Console.Write("Enter Amount to Withdraw : ");
+                        accounts.withdraw(amount);
+                        break;
+                  
+                    default:
+                        Console.WriteLine("Enter Proper number");
+                        break;
+                }
+            } while (choice <4 );
+        }
+    }
+}
+
+
+2. Create a class called student which has data members like rollno, name, class, Semester, branch, int [] marks=new int marks [5](marks of 5 subjects )
+
+-Pass the details of student like rollno, name, class, SEM, branch in constructor
+-For marks write a method called GetMarks() and give marks for all 5 subjects
+-Write a method called displayresult, which should calculate the average marks
+-If marks of any one subject is less than 35 print result as failed
+-If marks of all subject is >35 but average is < 50 then also print result as failed
+-If avg > 50 then print result as passed.
+-Write a DisplayData() method to display all values.
+
+using System;
+
+
+namespace Assignment_2
+{
+    class Students
+    {
+        int Rollno;
+        string Sname;
+        string Class;
+        ushort Semester;
+        string Branch;
+        int[] marks = new int[5];
+        public Students(int Rollno, string Sname, string Class, ushort Semester, string Branch, int[] marks)
+        {
+            this.Rollno = Rollno;
+            this.Sname = Sname;
+            this.Class = Class;
+            this.Semester = Semester;
+            this.Branch = Branch;
+            this.marks = marks;
+        }
+
+        public void Displayresult()
+        {
+            Console.WriteLine("Enter student details");
+            Console.WriteLine($"Student Rollno : {Rollno}");
+            Console.WriteLine($"Student name : {Sname}");
+            Console.WriteLine($"class : {Class}");
+            Console.WriteLine($"Semester : {Semester}");
+            Console.WriteLine($"Branch name : {Branch}");
+            Console.WriteLine($"Total marks : {marks.Sum()}");
+            string Status = marks.Sum() < 35 ? "Fail" : (marks.Sum() / marks.Length) < 50 ? "Fail" : "Pass";
+            Console.WriteLine($"Status : {Status}");
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Rollno;
+            string Sname;
+            string Class;
+            ushort Semester;
+            string Branch;
+            int[] mark = new int[5];
+            Console.Write("Enter Student RollNo : ");
+            Rollno = int.Parse(Console.ReadLine());
+            Console.Write("Enter Student Name : ");
+            Sname = Console.ReadLine();
+            Console.Write("Enter Class : ");
+            Class = Console.ReadLine();
+            Console.Write("Enter Semester : ");
+            Semester = int.Parse(Console.ReadLine());
+            Console.Write("Enter Branch Name : ");
+            Branch = Console.ReadLine();
+            Students student = new Students(Rollno, Sname, Class, Semester, Branch, GetMarks());
+            student.Displayresult();
+            Console.ReadLine();
+        }
+        public static int[] GetMarks()
+        {
+            int[] marks = new int[5];
+            for (int i = 0; i < marks.Length; i++)
+            {
+                Console.Write($"Enter sub {i + 1} marks : ");
+                marks[i] = int.Parse(Console.ReadLine());
+            }
+            return marks;
+        }
+    }
+}
