@@ -1,0 +1,8 @@
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\bin\Debug\ADO_Ass1.exe.config
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\bin\Debug\ADO_Ass1.exe
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\bin\Debug\ADO_Ass1.pdb
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\obj\Debug\ADO_Ass1.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\obj\Debug\ADO_Ass1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\obj\Debug\ADO_Ass1.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\obj\Debug\ADO_Ass1.exe
+C:\Users\Lenovo\Desktop\MedusInd Training\Medusind_training\Medusind_training\ADO\ADO_Ass1\ADO_Ass1\obj\Debug\ADO_Ass1.pdb

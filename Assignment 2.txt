@@ -1,0 +1,38 @@
+<<<<<<< HEAD
+SET II  (Using the same tables as Assignment 1)
+
+1) SELECT a.ename FROM EMP b JOIN EMP a ON b.mgr_id = a.empno GROUP BY a.empno, a.ename
+
+2)SELECT ename,sal FROM EMP WHERE sal>1000
+
+3)SELECT ename,sal FROM EMP WHERE ename != 'James'
+
+4)SELECT * FROM EMP WHERE ename LIKE 'S%'
+
+5)SELECT * FROM EMP WHERE ename LIKE '%a%'
+
+6)SELECT * FROM EMP WHERE ename LIKE '__l%'
+
+7) SELECT (sal*12)/365 FROM EMP WHERE ename = 'Jones'
+
+8)SELECT SUM(sal) as 'Total Salary' FROM EMP
+
+9) SELECT AVG(sal*12) as 'Average Annual Salary' FROM EMP
+
+10)SELECT ename,sal,job,deptno FROM EMP WHERE deptno != 30
+
+11)SELECT DISTINCT deptno FROM EMP
+
+12)SELECT ename as 'Employees', sal as 'Salary(Monthly)' FROM EMP WHERE sal>1500 AND deptno IN (10,30)
+
+13)SELECT ename,job,sal FROM EMP WHERE job IN ('Manager','Analyst') AND sal NOT IN (1000,3000,5000)
+
+14) SELECT ename,sal,comm FROM EMP WHERE comm>sal+(sal*0.1)
+
+15) SELECT ename FROM EMP WHERE ename LIKE '%l%l%' AND deptno = 30 OR mgr_id = 7782
+
+16) SELECT count(*) FROM EMP WHERE EXTRACT(YEAR FROM age(CURRENT_DATE, HIREDATE)) BETWEEN 30 & 40
+
+17)SELECT d.dname,e.ename FROM DEPT d, EMP e ON d.deptno = e.deptno ORDER BY d.dname ASC, e.ename DESC
+
+18)
