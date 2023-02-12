@@ -42,7 +42,7 @@
             <asp:Image ID="Image1" runat="server" />
             <br />
             <br />
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
         </div>
     </form>

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MVC_Ass1.Customer>
+@{
+    ViewBag.Title = "CInGermany";
+}
+
+<h2>CInGermany</h2>
+
+@foreach(var i in Model)
+            {
+                <ul>
+                    <li>@i.CustomerID</li>
+                    <li>@i.CompanyName</li>
+                    <li>@i.ContactName</li>
+                    <li>@i.City</li>
+                    <li>@i.Country</li>
+                </ul>
+            }
